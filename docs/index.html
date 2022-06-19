@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<style>
+    .player-wrapper 
+    {
+        margin: 0 auto;
+        width: 752px;
+        height: 50px;
+    }
+</style>
+<body>
+    <!-- OvenPlayer will be initialized inside this element. -->
+    <!-- Wrapper element for sizing or positioning the player -->
+    <div class="player-wrapper">
+        <!-- OvenPlayer will be initialized inside this element. -->
+        <div id="player_id"></div>
+    </div>
+
+    <!-- Load OvenPlayer via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/ovenplayer/dist/ovenplayer.js"></script>
+
+    <script>
+        // Initialize OvenPlayer
+        const player = OvenPlayer.create('player_id', {
+            showBigPlayButton: false,
+
+            sources: [
+                {
+                    label: 'label_for_webrtc',
+                    // Set the type to 'webrtc'
+                    type: 'webrtc',
+                    // Set the file to WebRTC Signaling URL with OvenMediaEngine 
+                    file: 'ws://211.177.23.196:3333/app/716station'
+                }
+            ]
+        });
+        player.showControls(true)
+
+
+    </script>
+</body>
+
+
+<style type="text/less">
+
+    /* LESS */
+
+    @charset "UTF-8";
+
+    @-webkit-keyframes op-slideOutDown 
+    {
+        from {
+            /* -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); */
+        }
+
+        to {
+            /* visibility: hidden;
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0); */
+        }
+    }
+
+    @keyframes op-slideOutDown 
+    {
+        from 
+        {
+            /* -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); */
+        }
+
+        to 
+        {
+            /* visibility: hidden;
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0); */
+        }
+    }
+    @-webkit-keyframes op-slideInUp 
+    {
+        from 
+        {
+            /* -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+            opacity: 1; */
+        }
+
+        to 
+        {
+            /* -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); */
+        }
+    }
+
+    @keyframes op-slideInUp 
+    {
+        from {
+            /* -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+            opacity: 1; */
+        }
+        to 
+        {
+            /* -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); */
+        }
+    }
+
+    .op-player
+    {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width : 100%;
+
+        .op-media-element-container 
+        {
+            /* display: block;
+            height: 10%;
+            width: auto;
+            position : relative;
+            visibility: hidden; */
+
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 20px;
+            height: 20px;
+
+            video 
+            {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0px;
+                height : 0px;
+
+            }
+            object 
+            {
+                width: 50px;
+                height : 50px;
+            }
+        }
+    }
+    .op-fullscreen-button 
+    {
+        position: relative;
+        margin-right: 15px;
+        .op-fullscreen-compress{display:none;};
+        visibility: hidden;
+    }
+
+    .op-controls-container
+    {
+        .op-setting-button 
+        {
+            position: relative;
+            margin-right: 12px;
+            visibility: hidden;
+        }       
+    }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/4.1.3/less.min.js"></script>
